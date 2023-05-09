@@ -41,9 +41,13 @@ function CategoryPage() {
                 ) : (
                     <Container>
                         <Row>
-                            <Col md={{ span: 10, offset: 1 }}>{productsSearch.map((product) => (
-                                <ProductPreview {...product} />
-                            ))}
+                            <Col md={{ span: 10, offset: 1 }}>
+                                <div className='d-flex justify-content-center align-items-center flex-wrap'>
+
+                                    {productsSearch.map((product) => (
+                                        <ProductPreview {...product} />
+                                    ))}
+                                </div>
                             </Col>
                         </Row>
                     </Container>

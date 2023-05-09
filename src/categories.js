@@ -4,7 +4,7 @@ const categories = [
         img: "https://cdn.tgdd.vn/Products/Images/7264/236066/nakzen-sl9287gbk-7-na-up-1-600x600.jpg"
     },
     {
-        name: "Phone",
+        name: "Phones",
         img: "https://cdn.tgdd.vn/Products/Images/42/251192/iphone-14-pro-max-den-thumb-600x600.jpg"
     },
     {
