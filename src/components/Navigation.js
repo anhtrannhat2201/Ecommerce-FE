@@ -1,10 +1,11 @@
 import React from 'react'
-import { Container, Navbar, NavDropdown, Nav, Button } from 'react-bootstrap'
+import { Container, Navbar, NavDropdown, Nav, Button, NavLink } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { LinkContainer } from 'react-router-bootstrap'
 
 import { logout } from '../redux/features/userSlice'
 import "./Navigation.css"
+import CartPage from '../pages/CartPage/CartPage'
 export default function Navigation() {
     const user = useSelector(state => state.user)
     const dispatch = useDispatch()
@@ -38,7 +39,16 @@ export default function Navigation() {
                                 </Nav.Link>
                             </LinkContainer>
                         )} */}
-
+                        {user && !user.isAdmin && (
+                            <LinkContainer to="/cart">
+                                <NavLink >
+                                    <i className='fas fa-shopping-cart'></i>
+                                    {user?.cart.count > 0 && (
+                                        <span className='badge badge-warning' id='cartcount'>{user.cart.count}</span>
+                                    )}
+                                </NavLink>
+                            </LinkContainer>
+                        )}
                         {/* if user */}
                         {user && (
                             <>
